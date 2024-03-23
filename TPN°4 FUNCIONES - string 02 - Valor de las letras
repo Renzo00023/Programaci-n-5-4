@@ -1,1 +1,108 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+
+int ContarVletras(string letra)
+{
+    int valor=0;
+	int contador=0;
+	for(int i=0; i< letra.size();i++){
+		if(letra[i]=='e' || letra[i]=='E')
+
+		{
+		    valor=1;
+		}
+		  if(  letra[i]=='a' || letra[i]=='A')  {
+		  	valor=1;
+		}
+		if(letra[i]=='o' || letra[i]=='O')	{
+		    valor=2;
+		}
+
+		if(letra[i]=='s' || letra[i]=='S'){
+			valor=2;
+		}
+		
+		if(letra[i]=='d' ||  letra[i]=='D' ){
+			valor=3;
+		}
+		if(letra[i]=='i' || letra[i]=='I' ){
+			valor=3;
+		}
+		if (letra[i]=='n' || letra[i]=='N' ){
+			valor=3;
+		}
+		if (letra[i]=='r' || letra[i]=='R'){
+		 	valor=3;
+		}
+		if(letra[i]=='c' || letra[i]=='C'){
+			valor=4;
+		}
+		if(letra[i]=='l'  || letra[i]=='L' ){
+			valor=4;
+		}
+		if (letra[i]=='t' || letra[i]=='T'){
+			valor=4;
+		}
+		if (letra[i]=='u' || letra[i]=='U'){
+			valor=4;
+		}
+	
+	if (letra[i]=='m' || letra[i]=='M'){
+			valor=5;
+		}
+		if (letra[i]=='p' || letra[i]=='P'){
+			valor=5;
+		}
+			if (letra[i]=='b' || letra[i]=='B'){
+			valor=6;
+		}
+			if (letra[i]=='f' || letra[i]=='F'){
+			valor=6;
+		}
+		if (letra[i]=='g' || letra[i]=='G'){
+			valor=6;
+		}
+			if (letra[i]=='h' || letra[i]=='H'){
+			valor=6;
+		}
+			if (letra[i]=='j' || letra[i]=='J'){
+			valor=6;
+		}
+			if (letra[i]=='q' || letra[i]=='Q'){
+			valor=6;
+		}
+		if (letra[i]=='v' || letra[i]=='V'){
+			valor=6;
+		}
+		if (letra[i]=='x' || letra[i]=='X'){
+			valor=6;
+		}
+			if (letra[i]=='y' || letra[i]=='Y'){
+			valor=6;
+		}
+			if (letra[i]=='k' || letra[i]=='K'){
+			valor=7;
+		}
+		if (letra[i]=='w' || letra[i]=='W'){
+			valor=7;
+		}
+		contador+=valor;
+
+	}
+
+	return contador;
+
+}
+
+int main(){
+    
+    string frase;
+    cout<<"Ingresa la frase: ";
+    getline(cin,frase);
+    cout<<"El valor de las letras es: "<<ContarVletras (frase);
+
+    return 0;
+}
 
