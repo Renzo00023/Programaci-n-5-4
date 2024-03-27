@@ -5,8 +5,8 @@ using namespace std;
  string Konnichi (string n)
     {
       string name;
-      string final = "-san";
-      string principio = "konnichi wa, ";
+      string san = "-san";
+      string konnichiwa = "konnichi wa, ";
       string nombreconvertido;
       for (int i = 0;i<n.size (); i++){
     	  name += n[i];
@@ -20,10 +20,8 @@ using namespace std;
     	}
     	}
     	}
-    	nombreconvertido=principio+name+final;
-
-
-      return nombreconvertido;
+    	name += san;
+    return konnichiwa + name;
     }
  
     int main (){
@@ -35,5 +33,3 @@ using namespace std;
       cout<<Konnichi(name)<<endl;
       return 0;
     }
-
-   
