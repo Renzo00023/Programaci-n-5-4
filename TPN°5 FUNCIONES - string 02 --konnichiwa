@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+using namespace std;
+ string Konnichi (string n)
+    {
+      string name;
+      string final = "-san";
+      string principio = "konnichi wa, ";
+      string nombreconvertido;
+      for (int i = 0;i<n.size (); i++){
+    	  name += n[i];
+    	  if (n[i] != 'a' && n[i] != 'e' && n[i] != 'i' && n[i] != 'o'
+    		  && n[i] != 'u' && n[i] != ' ')
+    		{
+    		    if (n[i + 1] != 'i' && n[i + 1] != 'e' && n[i + 1] != 'a'
+    			  && n[i + 1] != 'u' && n[i + 1] != 'o' && n[i + 1] != ' ')
+    			{
+    			    name += 'u';
+    	}
+    	}
+    	}
+    	nombreconvertido=principio+name+final;
+
+
+      return nombreconvertido;
+    }
+ 
+    int main (){
+      string name;
+
+      cout<<"Ingrese su nombre y apellido: ";
+      getline (cin, name);
+
+      cout<<Konnichi(name)<<endl;
+      return 0;
+    }
+
+   
