@@ -10,11 +10,8 @@ using namespace std;
       string nombreconvertido;
       for (int i = 0;i<n.size (); i++){
     	  name += n[i];
-    	  if (n[i] != 'a' && n[i] != 'e' && n[i] != 'i' && n[i] != 'o'
-    		  && n[i] != 'u' && n[i] != ' ')
-    		{
-    		    if (n[i + 1] != 'i' && n[i + 1] != 'e' && n[i + 1] != 'a'
-    			  && n[i + 1] != 'u' && n[i + 1] != 'o' && n[i + 1] != ' ')
+    	  if (n[i] != 'a' && n[i] != 'e' && n[i] != 'i' && n[i] != 'o' && n[i] != 'u' && n[i] != ' '&& n[i] != 'A' && n[i] != 'E' && n[i] != 'I' && n[i] != 'O' && n[i] != 'U'){
+    		    if (i+1 == n.size() || n[i + 1] != 'i' && n[i + 1] != 'e' && n[i + 1] != 'a' && n[i + 1] != 'u' && n[i + 1] != 'o'&& n[i + 1] != 'A' && n[i + 1] != 'E' && n[i + 1] != 'I' && n[i + 1] != 'U' && n[i + 1] != 'O' && n[i + 1])
     			{
     			    name += 'u';
     	}
