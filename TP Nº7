@@ -62,3 +62,4 @@ int main(){
     cout<<"Cantidad de latas que tiene la segunda secuencia mas larga: "<<cantidadLatasSecuencia[cantidadLatasSecuencia.size()-2]<<endl;
     cout<<"Distancia entre ambas: "<<CalcularDistanciaEntreSecuencias(frase, cantidadLatasSecuencia)<<endl;
 }
+rm
