@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+vector<int> CalcularMaxLatas(string frase) {
+    vector<int> cantidadLatasSecuencia;
+    int cantidad = 0;
+    for (int i = 0; i < frase.size(); i++) {
+        
+        if (frase[i] == 'G')
+        {
+            cantidad++;
+        } 
+        
+        if (frase[i] != 'G' || i == frase.size() - 1) 
+        {
+            cantidadLatasSecuencia.push_back(cantidad);
+            cantidad = 0;
+        }
+    }
+    sort(cantidadLatasSecuencia.begin(), cantidadLatasSecuencia.end());
+    return cantidadLatasSecuencia;
+}
+
+int CalcularDistanciaEntreSecuencias(string frase, vector<int>cantidadLatasSecuencia) {
+    int posicionDos = -1;
+    int posicionUno = -1;
+    int cantidad = 0;
+    
+    
+    for (int i = 0; i<frase.size(); i++) {
+        
+        if (frase[i] == 'G')  
+        {
+            cantidad++;
+        } 
+        if (frase[i] != 'G' || i == frase.size() - 1) 
+        {
+            if (cantidad == cantidadLatasSecuencia[cantidadLatasSecuencia.size() - 1]) 
+            {
+                posicionUno= i - cantidad;
+            } 
+            
+            if (cantidad == cantidadLatasSecuencia[cantidadLatasSecuencia.size() - 2]) 
+            {
+                posicionDos= i;
+            }
+            
+            cantidad = 0;
+        }
+    }
+    return posicionUno - posicionDos;
+}
+
+int main(){
+    string frase;
+    cout<<"Ingrese las latas: ";
+    getline(cin, frase);
+    cout<<"Cantidad de latas en la hilera: "<<frasep.size()<<endl;
+    vector<int> cantidadLatasSecuencia = CalcularMaxLatas(frase);
+    cout<<"Cantidad de latas que tiene la secuencia mas larga: "<<cantidadLatasSecuencia[cantidadLatasSecuencia.size()-1]<<endl;
+    cout<<"Cantidad de latas que tiene la segunda secuencia mas larga: "<<cantidadLatasSecuencia[cantidadLatasSecuencia.size()-2]<<endl;
+    cout<<"Distancia entre ambas: "<<CalcularDistanciaEntreSecuencias(frase, cantidadLatasSecuencia)<<endl;
+}
