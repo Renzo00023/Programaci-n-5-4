@@ -66,3 +66,4 @@ int main() {
     cout<<"Contador: "<<cont(matriz)<<endl;
     return 0;
 }
+rm
