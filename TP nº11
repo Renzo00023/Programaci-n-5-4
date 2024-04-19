@@ -41,7 +41,7 @@ int cont(const vector<vector<string> >& matriz) {
         }
     }
     
-    contador *= 2;
+    cont *= 2;
     
     for (int i = 0; i < matriz.size() - 2; i++) { 
         for (int j = 0; j < matriz[0].size(); j++){
