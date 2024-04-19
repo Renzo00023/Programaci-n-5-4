@@ -1,0 +1,68 @@
+#include<string>
+#include<iostream>
+#include<vector>
+using namespace std;
+
+string l;
+string o;
+vector<vector<string>> CrearMatriz(int n, int m) {
+    vector<vector<string>> matriz(n, vector<string>(m));
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < m ; j++) {
+
+            if (i % 2 == 0) {
+               matriz[i][j] = "L";
+            }if (i % 2 != 0) {
+                matriz[i][j] = "O";
+            }
+        }
+    }
+    return matriz;
+}
+
+void mostrarMatriz(const vector<vector<string>>& matriz, int n, int m) {
+    for (int i = 0 ; i < n; i++) {
+        cout << endl;
+        for (int j = 0; j < m; j++){
+            cout<<matriz[i][j];
+        }
+    }
+    cout<<endl; 
+}
+
+
+int cont(const vector<vector<string> >& matriz) {
+    int cont = 0;
+    for (int i = 0; i < matriz.size() - 2; i++) {
+        for (int j = 0; j < matriz[i].size() - 2; j++){
+            if(matriz[i][j] == "L" && matriz[i + 1][j + 1] == "O" && matriz[i + 2][j + 2] == "L") {
+                cont++;
+            }
+        }
+    }
+    
+    contador *= 2;
+    
+    for (int i = 0; i < matriz.size() - 2; i++) { 
+        for (int j = 0; j < matriz[0].size(); j++){
+            if(matriz[i][j] == "L" && matriz[i + 1][j] == "O" && matriz[i + 2][j] == "L") {
+                cont++;
+            }
+        }
+    }
+    return contador;
+}
+
+int main() {
+    int n, m; 
+    cout<<"Ingresa la cantidad de filas y luego de columnas (ej: 3 7): ";
+    cin>>n>>m;
+    
+    cout<<"Matriz: "<<endl;
+    vector<vector<string>>matriz = CrearMatriz(n, m);
+    mostrarMatriz(matriz, n, m);
+    cout<<"\nNumero de filas: "<<n<<endl;
+    cout<<"Numero de columnas: "<<m<<endl;
+    cout<<"Contador: "<<cont(matriz)<<endl;
+    return 0;
+}
