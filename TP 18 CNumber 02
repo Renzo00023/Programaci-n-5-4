@@ -1,0 +1,101 @@
+#include <iostream>
+using namespace std;
+ class CNumber {
+ 	private : int n1,n2,n3;
+ 	
+ 	public: 
+ 	CNumber (int, int, int);
+ 	int max();
+	int min();
+	float promedio();
+	int pares();
+	int impares();	
+ };
+ CNumber::CNumber(int num1, int num2, int num3) {
+ 	n1 = num1;
+ 	n2 = num2;
+ 	n3 = num3;
+ }
+ 
+ int CNumber::max(){
+ 	int max=n1;
+ 	
+ 	if (n2 > max) {
+ 		max = n2;
+	 }
+	if(n3 > max) {
+		max = n3;
+	} return max; 
+ }
+ 
+ int CNumber::min(){
+ 	int min = n1;
+ 	
+ 	if (n2 < min) {
+ 		min = n2;
+	 }
+	 
+	 if (n3 < min) {
+	 	min = n3;
+	 }
+	 return min;
+ }
+ 
+ float CNumber::promedio() {
+ 	return (n1 + n2 + n3) / 3;
+ } 
+ 
+ int CNumber::pares(){
+ 	int cont = 0;
+ 	
+ 	if (n1 % 2 == 0) {
+ 		cont++;
+	 }
+	 if (n2 % 2 == 0) {
+	 	cont++;
+	 }
+	 if (n2 % 2 == 0) {
+	 	cont++;
+	 }
+	 return cont;
+ }
+ 
+ int CNumber::impares(){
+ 	int cont = 0;
+ 	
+ 	if (n1 % 2 != 0) {
+ 		cont++;
+	 }
+	 if (n2 % 2 != 0) {
+	 	cont++;
+	 }
+	 if (n2 % 2 != 0) {
+	 	cont++;
+	 }
+	 return cont;
+ }
+ 
+ 
+ int main() {
+ 	int n1 = 0;
+ 	int n2 = 0;
+ 	int n3 = 0;
+ 	
+ 	cout<<"Ingresa el primer numero: ";
+ 	cin>>n1;
+ 	cout<<"Ingresa el segundo numero: ";
+ 	cin>>n2;
+ 	cout<<"Ingresa el tercer numero: ";
+ 	cin>>n3;
+ 	
+ 	CNumber numeros = CNumber(n1, n2, n3);
+ 	
+ 	cout<<"Max: "<< numeros.max()<<endl;
+ 	cout<<"Min: "<< numeros.min()<<endl;
+ 	cout<<"Promedio: "<< numeros.promedio()<<endl;
+ 	cout<<"Pares: "<< numeros.pares()<<endl;
+ 	cout<<"Impares: "<< numeros.impares()<<endl;
+ 	
+ 	return 0;
+ 	
+ }
