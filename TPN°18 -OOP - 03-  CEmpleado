@@ -1,0 +1,70 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+class CEmpleado {
+    private:
+        string nombre;
+        int anioIngreso;
+        int salario;
+        string direccion;
+    public:
+        CEmpleado(string nombre, int anioIngreso, int salario, string direccion);
+        int aniosAntiguedad();
+        bool wallStreet();
+};
+
+CEmpleado::CEmpleado(string nombre, int anioIngreso, int salario, string direccion) {
+    this->nombre = nombre;
+    this->anioIngreso = anioIngreso;
+    this->salario = salario;
+    this->direccion = direccion;
+}
+
+int CEmpleado::aniosAntiguedad() { 
+    return 2024 - anioIngreso;
+}
+
+bool CEmpleado::wallStreet() {
+    string buscar = "Wall Street";
+    bool ubicadoEnWallStreet = false;
+    if (direccion.find(buscar) != string::npos) {
+        ubicadoEnWallStreet = true;
+    }
+    return ubicadoEnWallStreet;
+}
+
+int main() {
+    string nombre;
+    cout << "Ingrese el nombre del empleado: ";
+    getline(cin, nombre);
+    
+    int anioIngreso;
+    cout << "Ingrese el año de ingreso: ";
+    cin >> anioIngreso;
+    
+    int salario;
+    cout << "Ingrese el salario: ";
+    cin >> salario;
+    
+    string direccion;
+    cout << "Ingrese la dirección: ";
+    getline(cin, direccion);
+    
+    CEmpleado empleado = CEmpleado(nombre, anioIngreso, salario, direccion);
+    int anios;
+    bool viveEnWallStreet;
+    anios = empleado.aniosAntiguedad(); 
+    viveEnWallStreet = empleado.wallStreet();
+    string respuesta = "No vive en wall street";
+    if (viveEnWallStreet) {
+        respuesta = "Reside en Wall Street";
+    }
+    cout << "Nombre: " << nombre << endl;
+    cout << "Año de ingreso: " << anioIngreso << endl;
+    cout << "Salario: " << salario << endl;
+    cout << "Dirección: " << direccion << endl;
+    cout << "Años de antigüedad: " << anios << endl;
+    cout << respuesta << endl;
+}
+rm
