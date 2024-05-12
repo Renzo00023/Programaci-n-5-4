@@ -1,0 +1,82 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class CEmpleado {
+  private: 
+  string nombre; 
+  string apellido;
+  string domicilio;
+  int antiguedad;
+  int cantidadHijos;
+  int sueldoBasico;
+  
+  public:
+  CEmpleado(string,string,string,int,int,int);
+  float jubilacion();
+  float obraSocial();
+  float INSSJP();
+};
+
+CEmpleado::CEmpleado(string Name,string Lname,string Address,int numHijos,int SueldoBasico,int Antiguedad)  {
+    nombre = Name;
+    apellido = Lname;
+    domicilio = Address;
+    cantidadHijos = numHijos;
+    sueldoBasico = SueldoBasico;
+    antiguedad = Antiguedad;
+}
+
+float CEmpleado::jubilacion() {
+    return (11 * sueldoBasico) / 100;
+}
+
+float CEmpleado::INSSJP() {
+    return (3 * sueldoBasico) / 100;
+}
+
+float CEmpleado::obraSocial() {
+    return (3 * sueldoBasico) / 100;
+}
+
+
+int main(){
+    string nombre;
+    cout<<"Ingrese el nombre: ";
+    getline(cin, nombre);
+    
+    string apellido;
+    cout<<"Ingrese el apellido: ";
+    getline(cin, apellido);
+    
+    string domicilio;
+    cout<<"Ingrese el domiciolio: ";
+    getline(cin, domicilio);
+    
+    int canthijos, sueldoBasico, antiguedad;
+    
+    cout<<"Ingrse cantidad de hijos: ";
+    cin>>canthijos;
+    
+    cout<<"Ingrse su sueldo basico: ";
+    cin>>sueldoBasico;
+    
+    cout<<"Ingrse su antiuedad: ";
+    cin>>antiguedad;
+    
+    float jubilacion, obraSocial, INSSJP;
+    CEmpleado deducciones = CEmpleado(nombre, apellido, domicilio, canthijos,antiguedad,sueldoBasico);
+    jubilacion = deducciones.jubilacion();
+    INSSJP = deducciones.INSSJP();
+    obraSocial = deducciones.obraSocial();
+    
+    cout<<"Cantidad de dinero que va a ir a la jubilacion : "<<jubilacion<<endl;
+    cout<<"Cantidad de dinero que va a ir a las obras sociales : "<<obraSocial<<endl;
+    cout<<"Cantidad de dinero que va a ir al INSSJP : " <<INSSJP<<endl;
+}
+
+
+
+
+
+
+//rm.
